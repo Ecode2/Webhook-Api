@@ -84,7 +84,7 @@ async def update_user_info(db: Session, password: str, email:str, body: Customer
         db.commit()
         print("username updated")
     if body.password:
-        customer.password = body.password
+        customer.password = Hash.sha256(body.password)
         db.commit()
         print("password updated")
     if body.url:

@@ -3,7 +3,7 @@ python-dotenv
 fastapi
 uuid
 typing
-passlib
+hashlib
 pydantic
 requests
 psycopg2-binary
