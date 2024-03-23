@@ -1,0 +1,9 @@
+sqlalchemy
+python-dotenv
+fastapi
+uuid
+typing
+passlib
+pydantic
+requests
+psycopg2-binary
