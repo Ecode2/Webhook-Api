@@ -31,8 +31,6 @@ app.add_middleware(
   allow_headers = ['*']
 )
 
-api_key_scheme = SecurityScopes([])
-
 # Create database tables
 models.Base.metadata.create_all(engine)
 #models.create_db()
@@ -43,8 +41,7 @@ def confirm_ip_address(request: Request):
 
     allowed_ip = ["52.31.139.75",
                 "52.49.173.169",
-                "52.214.14.220",
-                "127.0.0.1"]
+                "52.214.14.220"]
 
     client_ip = request.client.host
 
@@ -98,7 +95,7 @@ async def Create_WebHook_Url(request: Request, Body: CustomerBase = Body(None), 
              "webhook_url": f"{current_url}/webhook/url/{schema_info.id}"
              }
 
-# 6b92b6d4-24bb-494b-a57b-742d19d43279
+
 @app.post("/user", response_model=CustomerApiResponse, summary="retrieve all information about a user")
 async def Get_User_Info(request: Request, Body: CustomerCheck = Body(None), current_url = Depends(get_request_class), db: Session = Depends(get_db)):
 
